@@ -17,8 +17,10 @@ const  Input: React.FC<InputProps> = ({name, ...rest})=> {
         })
     },[fieldName, registerField]);
     return (
+        <div>
         <input ref={inputRef} {...rest}/>
-
+          {error && <span style={{color: '#f00'}}>{error}</span>}
+        </div>
     );
 }
 
