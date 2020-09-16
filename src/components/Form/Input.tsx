@@ -6,9 +6,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 const  Input: React.FC<InputProps> = ({name, ...rest})=> {
-    const inputRef = useRef(null);
+    const inputRef = useRef(null); //cria uma referencia do elemento na DOM (uncontrolled form)
+   // Hook que conecta o imput ao unform
     const {fieldName, registerField,defaultValue, error} = useField(name);
 
+    // dispara a função registerField
     useEffect(()=> {
         registerField({
             name:fieldName,
@@ -16,6 +18,7 @@ const  Input: React.FC<InputProps> = ({name, ...rest})=> {
             path:'value'
         })
     },[fieldName, registerField]);
+
     return (
         <div>
         <input ref={inputRef} {...rest}/>
