@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import { Form} from '@unform/web';
 import {Scope, SubmitHandler, FormHandles} from '@unform/core';
 import Input from './components/Form/Input';
-import './App.css';
+
 import * as Yup from 'yup';
 import "./style.css";
 
